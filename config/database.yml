@@ -9,7 +9,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: free_ad
-  password: free_ad1!
+  password: freead1!
   socket: /var/run/mysqld/mysqld.sock
 
 

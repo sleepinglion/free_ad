@@ -1,15 +1,171 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@charset "utf-8";
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html,body {margin:0;padding:0;height: 100%;background:#eee}
+body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
+label {vertical-align:middle;cursor:pointer}
+a img {border:none}
+input {vertical-align:middle}
+fieldset {border:none}
+legend {display:none}
+a{color:#1f1f1f;text-decoration:none;}
+a:active {color:red}
+a:hover{color:#333;text-decoration:underline;}
+a img {border:none}
+
+h1 {font-size :160%}
+h2 {font-size :140%}
+h3 {font-size :140%}
+h4,h5,h6 {font-size : 100%}
+
+/* Getting the new tags to behave*/
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block;}
+mark, rp, rt, ruby, summary, time {display:inline}
+
+/* layout */
+footer {clear:both;float:left;width:100%; color:#666;text-align: center}
+footer address {margin:1.8em 0 0}
+#mom {float:left;width:100%;padding:0;min-height:100%}
+.sub_main {float:left;width:100%;padding:4em 0 2em}
+.alert-success {clear:both}
+#sl_tag_cloud {position:relative;margin-bottom:30px;}
+#tags {float:left;width:100%}
+.css1 { font-size: 15px; color:orange}
+.css2 { font-size: 20px; color:#333}
+.css3 { font-size: 30px; color:blue; }
+.css4 { font-size: 45px; color:red;}
+
+/* Common Class */
+.arial {font-family:Arial}
+.noneData {text-align:center}
+.number {font-family:Arial;letter-spacing:0}
+
+ /* header */
+header {position:fixed;float:left;width:100%;padding:0;margin:0;background:#6999d1;z-index:9997}
+header.no_fix {position:relative}
+/* 로고 */
+header h1 {margin:0;padding:0;line-height:100%;font-size:100%}
+header h1 a {display:block; margin:10px auto;width:200px;font-size:25px;color:#fff}
+	
+/* 상단 버튼 */
+header #show_menu {position:absolute;top:0;left:0;width:60px;height:100%;background:url('/images/ico_menu.png') center center no-repeat}	/* 버튼 - 메뉴 */
+header #show_search_form {position:absolute;top:0;right:0;width:60px;height:100%;background:url('/images/ico_sch.png') center center no-repeat}	/* 버튼 - 검색 */
+
+
+#s-search_form_layer {clear:both;float:left;width:100%;margin:0;padding:1em 0;display:none;background:#fff}
+header .input-group-btn {line-height:1.1}
+
+/* aside */
+aside {position:fixed;left:0px; z-index:9999; width:0%; height:100%;padding:0;background:#e4e4e4; display:none}
+aside #aside_top {float:left;width:100%;text-align:right;padding:5px;background:#6999d1;text-align:center;color:#fff}
+aside #aside_top h2 {float:left;margin:0;padding:0;}
+aside #aside_top a {float:right;color:#fff}
+aside ul {clear:both;margin:0;padding:0}
+aside li {list-style:none;margin:0 0 0.5%;padding:0;border-bottom:1px solid #ccc; font-size :110%; font-weight:500;background:#fff}
+aside li a {display:block;padding:3%}
+
+#tags ul {margin:0;padding:0;list-style:none}
+#tags ul li {float:left;margin:0 10px}
+
+#sns_share li {list-style:none;margin:0 0 5px}
+#sns_share li a {display:block;min-height:30px;background-repeat:no-repeat;text-indent:45px;line-height:30px}
+#sns_share li a span {display:block}
+#sns_share li a.s_facebook {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_fb_on.gif')}
+#sns_share li a.s_twitter {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_twt_on.gif')}
+#sns_share li a.s_google {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_gp_on.gif')}
+#sns_share li a.s_mail {}
+
+#sl_community_index .article {margin:1% 0 0; padding: 0 0.5%}
+#sl_community_index .article article {background:#fff;padding-bottom:3%}
+	
+.sl_content_title {margin:20px 10px 0 10px;line-height:150%;font-weight:700;text-overflow: ellipsis}
+.sl_content_title a {text-overflow: ellipsis}
+.sl_content_content {padding:0 10px} 
+.create_info {float:left;margin:10px 0}
+.create_info img {float:left}
+.create_info p {font-size:smaller}
+
+/* buttoms */
+#sl_bottom_menu {float:left;width:100%;padding:10px 0 0;}
+#sl_index_bottom_menu, #sl_content_bottom_menu {float:left;width:100%;border-top:1px solid #ccc;margin:20px 0;padding:10px 0}
+
+.carousel-control {width:40px}
+.carousel-control.left {top:40%;left:0;background:rgba(0,0,0,0.6);height:20%}
+.carousel-control.right {top:40%;right:0;background:rgba(0,0,0,0.6);height:20%}
+
+/* comment_list */
+.sl_comment_list_layer {float:left;width:100%}
+.sl_comment_list_layer .sl_created_at {color:#999;margin-left:20px}
+
+.comments {float:left;width:100%;margin:0 5px;}
+.comments .comment {float:left;position:relative;width:100%;border:1px solid #ccc;margin-bottom:20px;background:#fff;border-radius:5px}
+.comments label {text-indent:-9999px}
+.new_comment_form {float:left;width:100%}
+.agree {color:blue}
+.disagree {color:red}
+.poll_count {float:left;width:100%;margin:10px 0}
+.poll_count div.rd {padding:10px 0;text-align:left;line-height:120px;font-size:25px;border:1px solid #ccc;width:150px;height:150px;border-radius:75px;margin:0 auto}
+.agree_disagree {border:2px solid #ccc;float:left;margin-right:20px}
+.comment_img {float:left;}
+.comment_content {position:relative;float:left}
+.comments .agree {border:2px solid #30f}
+.comments .disagree {border:2px solid #f30}
+#community_view .new_comment_form form {border:1px solid #ccc;padding:2%;border-radius:5px;background:#fff}
+.bottom_buttons {float:left;width:100%;margin:20px 0}
+.comment-delete-button,.comment-comment-delete-button {}
+#community_view .tag li {float:left;margin:0 5px;list-style:none;}
+#community_view .tag li:after {content:','}
+#community_view .tag li:last-child:after {content:none}
+#community_view .tag {margin:0 0 0 30px}
+.poll_count div.rd .agree {background:}
+.comment_comments {clear:both;margin:0px 30px 0px 120px;padding:20px 0}
+.comment_comments .comments {}
+.comment_comment_form {display:none}
+
+h3.no_m {margin:0}
+#myModal {top:10%}
+.img-responsive {margin:0 auto} 
+.new_photo_layer {margin-bottom:20px}
+.admin-btn div {margin-bottom:15px}
+
+.sl_content_header {border-bottom:2px solid #ddd}
+.sl_content_info {float:right;padding:10px 0;color:#999}
+.sl_content_text {clear:both;padding:10px; font-size: 1.143em; line-height: 1.6em; color:#333;}
+#sl_content_bottom_buttons {border-top:1px solid #ccc;margin-top:10px;padding-top:10px}
+.link_more {cursor:pointer;color:#b4b4b4;margin:0 0 0 8px; font-size:0.91em;}
+
+#div_black {position:fixed;z-index:9998;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.7);display:none}
+
+@media all and (max-width: 768px) {
+	a:hover{color:#333;text-decoration:none;}
+	header {height:3.8em;line-height:3.8em;padding:0.8em 0;}	
+	header h1 a { min-height:2em; background:url('/images/logo_m.png') center center no-repeat} 
+	footer {background:#fff;margin:1% 0;height:5em}
+ 	header #show_menu {background-image:url('/images/ico_menu_m.png')}
+ 	header #show_search_form {background-image:url('/images/ico_sch_m.png')}
+	#mom {float:left;width:100%;margin:0}
+	#main {float:left;width:100%;margin:0;padding:3.8em 0 0}
+	.sub_main {padding:0}
+	#sl_community_index .article {margin:1% 0;padding:0}
+	#sl_community_index .article:first-child {margin-top:0; padding-top:0}	
+	#sl_community_index .article article {padding:0 0 2%}	
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {	
+	a:hover{color:#333;text-decoration:none;}
+	header {height:4em;line-height:4em;padding:0.9em 0}	
+	header h1 a { min-height:2em;background-image:url('/images/logo_m.png')}
+	footer {height:3em}
+	#mom {margin:-3em 0 -3em;min-height:100%}
+	#main {padding-top:3em;padding-bottom:3em}
+}
+
+@media all and (min-width: 1025px) {
+	header {height:4em;line-height:3.8em;padding:0.5em 0}	
+	header h1 a {display:block; min-height:3em}
+	footer {height:4em;border-top:1px solid #e7e7e7}	
+	#mom {margin:-4em 0 -4em;min-height:100%}
+	#main {padding-top:4em;padding-bottom:4em}
+}

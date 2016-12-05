@@ -21,8 +21,14 @@
 
 en:
   hello: "Hello world"
+  application_name: 'Application Name'  
   menu: 'Menu'
+  login: 'Login'
   search: 'Search'
+  delete: 'Delete'
+  edit: 'Edit'
+  close: 'Close'
+  link_more : 'Link More'   
   recommend: 'recommend'
   share: 'share'
   comment: 'comment'

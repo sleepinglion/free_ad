@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+//= require 'masonry/basic'
+//= require 'masonry/centered'
+//= require 'masonry/fluid'
+//= require 'masonry/gutters'
+//= require 'masonry/infinitescroll'
+//= require 'masonry/right-to-left'
+//= require 'masonry/transitions'
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -76,9 +84,6 @@ aside li a {display:block;padding:3%}
 #sns_share li a.s_twitter {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_twt_on.gif')}
 #sns_share li a.s_google {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_gp_on.gif')}
 #sns_share li a.s_mail {}
-
-#sl_community_index .article {margin:1% 0 0; padding: 0 0.5%}
-#sl_community_index .article article {background:#fff;padding-bottom:3%}
 	
 .sl_content_title {margin:20px 10px 0 10px;line-height:150%;font-weight:700;text-overflow: ellipsis}
 .sl_content_title a {text-overflow: ellipsis}

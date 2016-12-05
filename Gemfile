@@ -38,6 +38,7 @@ gem 'impressionist'
 gem 'mini_magick'
 gem 'cancan'
 gem 'acts-as-taggable-on'
+gem 'impressionist'
 gem 'ckeditor', :path=>"vendor/gems/ckeditor"
 gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
 gem 'meta-tags'

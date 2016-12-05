@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
     super(*params)
     
     @style='admin/application'
-  end  
+  end
   
   def layout
     if(params[:no_layout])

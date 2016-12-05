@@ -5,12 +5,9 @@ class User < ActiveRecord::Base
   validates_length_of :password, :within => 5..255
   validates_presence_of :email, :nickname, :password, :password_confirmation, :on=>[:create]
   validates_confirmation_of :password
-  has_many :shopping, :dependent=>:destroy
-  has_many :order, :dependent=>:destroy
   has_many :user_login_log, :dependent=>:destroy
-  
   has_many :roles_user
-  has_many :role, :through=> :roles_admin
+  has_many :role, :through=> :roles_user
   
   def role?(role)
     return !!self.role.find_by_title(role)

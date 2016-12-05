@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root :to => 'articles#index'
-  mount Ckeditor::Engine => '/ckeditor'
+  mount Ckeditor::Engine => 'ckeditor'
   
   devise_for :users, :controllers => { :sessions => "users/sessions",:registrations => "users/registrations" }, :path_names =>  {:sign_up=>'new',:sign_in => 'login', :sign_out => 'logout'} do
     get 'new', :to => 'users::Registrationss#new'
@@ -12,15 +12,13 @@ Rails.application.routes.draw do
   end
   
   get '/login', :to =>  'users/sessions#new'  
-  
-  resources :users  
+
+  resources :users
   resources :articles
   
   # admin
   namespace :admin do
-    get '/' => 'admin#index'
-    
-    resources :users     
+    get '/' => 'admin#index'    
     resources :articles
   end      
 end

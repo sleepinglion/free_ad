@@ -1,143 +1,166 @@
 <section id="sl_community_index">
-  <input type="hidden" id="total_article" value="total" />
-  <ul>
-  	<% if(current_user) %>
-  	<li><%= link_to edit_user_registration_path do %><%=t(:welcome) %><% end %></li>
-  	<li><%= link_to t(:logout),destroy_user_session_path %></li>
-  	<% else %>
-  	<li><%= link_to t(:login),new_user_session_path %></li>
-  	<% end %> 
-  </ul> 
-  <div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".article"}' style="float:left;width:100%">
-	<% unless @articles.empty? %>
-	<% @articles.each_with_index do |article,index| %>
-    <div class="article col-xs-12 col-sm-6 col-md-4 col-lg-3">
-      <article class="panel panel-default">
-        <div class="sl_content_main">
-          <% unless article.article_photos.empty? %>
-          <div class="carousel slide" id="article<%=index %>" data-ride="carousel<%=index %>" data-interval="8000">
-            <div class="carousel-inner" role="listbox">
-              <% article.article_photos.each_with_index do |photo,photo_index| %>
-              
-              <!-- Wrapper for slides -->
-              <div class="item<% unless(photo_index) %> active<% end %>">
-              	<!-- <a href="/uploads/communities/<?php echo $photo['file_name'] ?>" class="simple_image"> --><img class="img-responsive" src="/uploads/communities/thumb_<%=photo.photo %>" alt="<%=article.title %>" /> <!-- </a> -->
-              </div>              
-              <% end %>
-            </div>
-            
-            <a class="left carousel-control" href="#article<%=index %>" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><%=t(:previous) %></span> </a>
-            <a class="right carousel-control" href="#article<%=index %>" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><%=t(:next) %></span> </a>
-            
-          </div>
-          <% end %>
-          <div class="sl_content_content">
-          	<div class="panel-heading">
-          		<h3 class="panel-title" itemprop="name"><%=link_to article.title,article,{:class=>'a_link'} %></h3>
-          	</div>
-						<div class="sl_content_text" itemprop="text">
-							<%=link_to article.description,article,{:class=>'a_link'} %>
-							<div class="content_text_layer" style="display:none"></div>
-							<span class="link_more"><% t(:link_more) %></span>
-						</div>
-            <div class="create_info">
-            	<img style="float:left;display:none" src="/uploads/users/thumb_<%=article.user.photo %>" alt="<%=article.title %>" width="50" height="50" class="img-circle" />
-              <div style="float:left;margin-left:10px">
-                <p style="display:none"><%=article.user.nickname %></p>
-                <p><%=article.created_at %></p>
-              </div>
-            </div>
-            <% if(current_user) %>    
-            <div class="btn-group admin-btn" role="group">
-              <div>
-              	<%=link_to delete_article_path(article),{:class=>"btn btn-default"} do %><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><%=t(:delete_link) %><% end %>
-              	<%=link_to edit_article_path(article),{:class=>"btn btn-default"} do %><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><%=t(:edit_link) %><% end %>
-              </div>
-            </div>
-            <% end %>       
-            <div style="border-top:1px solid #ccc;float:left;width:100%;padding:10px 0 0">
-              <div class="btn-group" role="group" aria-label="..." style="float:left;margin-right:20px">
-                <form class="recommend_form" action="/communities/recommend" method="post">
-                  <input type="hidden" name="id" value="<%=article.id %>" />
-                  <button type="submit" value="" class="btn btn-default" title="<%=t(:recommend) %>"> <span class="glyphicon glyphicon-heart"></span> <span class="recommend_count"><%=article.recommend_count %></span> </button>
-                  <button type="button" class="btn btn-default btn-share" title="<%=t(:share) %>"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-share-alt"></span></button>
-                </form>
-              </div>
-              <div class="btn-group" role="group" aria-label="..." style="float:right">
-                <button class="btn btn-default dropdown-toggle comment_btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="<%=t(:comment) %>"> <%=t(:comment) %> <span class="comment_count"><%=article.article_comments_count %></span> <span class="caret"></span> </button>
-              </div>
-            </div>
-            <section class="comments" style="display:none">
-              <% unless article.article_comments.empty? %>
-			  <% article.article_comments.each_with_index do |article,index| %>
-              comments
-              <% end %>
-              <% end %>
-              comments_new
-            </section>
-          	<div class="clearfix"></div>            
-          </div>
-        </div>
-      </article>
-    </div>
-    <% end %>
- <div id="copy_template" class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="display:none">
-      <article class="community_contents">
-        <div class="sl_content_main">
-          <div id="article00" data-ride="carousel00">
-            <div class="carousel-inner" role="listbox">
-              <!-- Wrapper for slides -->
-              <div class="item">
-              	<img class="img-responsive" src="" alt="" />
-            	</div>
-            </div>            	
-            <a class="left carousel-control" href="#article00" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><%=t(:previous) %></span> </a> <a class="right carousel-control" href="#article00" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><%=t(:next) %></span> </a>
+	<input type="hidden" id="total_article" value="total" />
+	<ul>
+		<% if(current_user) %>
+		<li>
+			<%= link_to edit_user_registration_path do %><%= t(:welcome) %><% end %>
+		</li>
+		<li>
+			<%= link_to t(:logout),destroy_user_session_path %>
+		</li>
+		<% else %>
+		<li>
+			<%= link_to t(:login),new_user_session_path %>
+		</li>
+		<% end %>
+	</ul>
+	<div class="grid js-masonry" data-masonry-options='{ "itemSelector": ".article"}' style="float:left;width:100%">
+		<% unless @articles.empty? %>
+		<% @articles.each_with_index do |article,index| %>
+		<div class="article col-xs-12 col-sm-6 col-md-4 col-lg-3">
+			<article class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" itemprop="name"><%= link_to article.title,article,{:class=>'a_link'} %></h3>
+				</div>
+				<div class="panel-body">
+					<% unless article.article_photos.empty? %>
+					<div class="carousel slide" id="article<%= index %>" data-ride="carousel<%= index %>" data-interval="8000">
+						<div class="carousel-inner" role="listbox">
+							<% article.article_photos.each_with_index do |photo,photo_index| %>
 
-          </div>
-          <div class="sl_content_content">
-            <h3 itemprop="name" class="sl_content_title"><%=link_to '','',{:target=>'_blank',:class=>'a_link'} %></h3>
-						<div class="sl_content_text" itemprop="text">
-							<%=link_to '','',{:target=>'_blank',:class=>'a_link'} %>
-							<div class="content_text_layer" style="display:none"></div>
-							<span class="link_more"><?php echo _('link_more') ?></span>
+							<!-- Wrapper for slides -->
+							<div class="item<% unless(photo_index) %> active<% end %>">
+								<!-- <a href="/uploads/communities/<?php echo $photo['file_name'] ?>" class="simple_image"> --><img class="img-responsive" src="/uploads/communities/thumb_<%= photo.photo %>" alt="<%= article.title %>" /><!-- </a> -->
+							</div>
+							<% end %>
 						</div>
-            <div class="create_info">
-            	<img style="float:left;display:none" src="" alt="sample title" width="50" height="50" class="img-circle" />
-              <div style="float:left;margin-left:10px">
-                <p style="display:none"></p>
-                <p></p>
-              </div>
-            </div>
-            <% if(current_user) %>         
-            <div class="btn-group admin-btn" role="group">
-              <div>
-              	<%=t(:delete) %>
-              	<%=t(:edit) %>
-              </div>
-            </div>
-            <% end %>            
-            <div style="border-top:1px solid #ccc;float:left;width:100%;padding:10px 0 0">
-              <div class="btn-group" role="group" aria-label="..." style="float:left;margin-right:20px">
-                <form class="recommend_form" action="/communities/recommend" method="post">
-                  <input type="hidden" name="id" value="" />
-                  <button type="submit" value="" class="btn btn-default" title="<%=t(:recommend) %>"> <span class="glyphicon glyphicon-heart"></span> <span class="recommend_count"></span> </button>
-                  <button type="button" class="btn btn-default btn-share" title="<%=t(:share) %>"  data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-share-alt"></span></button>
-                </form>
-              </div>
-              <div class="btn-group" role="group" aria-label="..." style="float:right">
-                <button class="btn btn-default dropdown-toggle comment_btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="<%=t(:comment) %>"> <%=t(:comment) %> <span class="comment_count"></span> <span class="caret"></span> </button>
-              </div>
-            </div>
-            <section class="comments" style="display:none">
-            	
-            </section>
-          	<div class="clearfix"></div>            
-          </div>
-        </div>
-      </article>
-    </div>  	    
-    <% else %>
-    <article><% t(:no_data) %></article>
-    <% end %>
-  </div>
+
+						<a class="left carousel-control" href="#article<%= index %>" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><%= t(:previous) %></span> </a>
+						<a class="right carousel-control" href="#article<%= index %>" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><%= t(:next) %></span> </a>
+
+					</div>
+					<% end %>
+
+					<div class="sl_content_text" itemprop="text">
+						<%= link_to article.description,article,{:class=>'a_link'} %>
+						<div class="content_text_layer" style="display:none"></div>
+						<span class="link_more"><% t(:link_more) %></span>
+					</div>
+					<div class="create_info">
+						<img style="float:left;display:none" src="/uploads/users/thumb_<%= article.user.photo %>" alt="<%= article.title %>" width="50" height="50" class="img-circle" />
+						<div style="float:left;margin-left:10px">
+							<p style="display:none">
+								<%= article.user.nickname %>
+							</p>
+							<p>
+								<%= article.created_at %>
+							</p>
+						</div>
+					</div>
+					<% if(current_user) %>
+					<div class="btn-group admin-btn" role="group">
+						<div>
+							<%=link_to article_path(article),{:method => :delete,:class=>"btn btn-default"} do %><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><%= t(:delete_link) %><% end %>
+							<%=link_to edit_article_path(article),{:class=>"btn btn-default"} do %><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><%= t(:edit_link) %><% end %>
+						</div>
+					</div>
+					<% end %>
+					<div style="border-top:1px solid #ccc;float:left;width:100%;padding:10px 0 0">
+						<div class="btn-group" role="group" aria-label="..." style="float:left;margin-right:20px">
+							<form class="recommend_form" action="/communities/recommend" method="post">
+								<input type="hidden" name="id" value="<%= article.id %>" />
+								<button type="submit" value="" class="btn btn-default" title="<%= t(:recommend) %>">
+									<span class="glyphicon glyphicon-heart"></span><span class="recommend_count"><%= article.recommend_count %></span>
+								</button>
+								<button type="button" class="btn btn-default btn-share" title="<%= t(:share) %>"  data-toggle="modal" data-target="#myModal">
+									<span class="glyphicon glyphicon-share-alt"></span>
+								</button>
+							</form>
+						</div>
+						<div class="btn-group" role="group" aria-label="..." style="float:right">
+							<button class="btn btn-default dropdown-toggle comment_btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="<%= t(:comment) %>">
+								<%= t(:comment) %> <span class="comment_count"><%= article.article_comments_count %></span><span class="caret"></span>
+							</button>
+						</div>
+					</div>
+					<section class="comments" style="display:none">
+						<% unless article.article_comments.empty? %>
+						<% article.article_comments.each_with_index do |article,index| %>
+						comments
+						<% end %>
+						<% end %>
+						comments_new
+					</section>
+					<div class="clearfix"></div>
+				</div>
+			</article>
+		</div>
+		<% end %>
+		<div id="copy_template" class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="display:none">
+			<article class="community_contents">
+				<div class="sl_content_main">
+					<div id="article00" data-ride="carousel00">
+						<div class="carousel-inner" role="listbox">
+							<!-- Wrapper for slides -->
+							<div class="item">
+								<img class="img-responsive" src="" alt="" />
+							</div>
+						</div>
+						<a class="left carousel-control" href="#article00" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only"><%= t(:previous) %></span> </a><a class="right carousel-control" href="#article00" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only"><%= t(:next) %></span> </a>
+
+					</div>
+					<div class="sl_content_content">
+						<h3 itemprop="name" class="sl_content_title"><%= link_to '','',{:target=>'_blank',:class=>'a_link'} %></h3>
+						<div class="sl_content_text" itemprop="text">
+							<%= link_to '','',{:target=>'_blank',:class=>'a_link'} %>
+							<div class="content_text_layer" style="display:none"></div>
+							<span class="link_more"><%= t(:link_more) %></span>
+						</div>
+						<div class="create_info">
+							<img style="float:left;display:none" src="" alt="sample title" width="50" height="50" class="img-circle" />
+							<div style="float:left;margin-left:10px">
+								<p style="display:none"></p>
+								<p></p>
+							</div>
+						</div>
+						<% if(current_user) %>
+						<div class="btn-group admin-btn" role="group">
+							<div>
+								<%= t(:delete) %>
+								<%= t(:edit) %>
+							</div>
+						</div>
+						<% end %>
+						<div style="border-top:1px solid #ccc;float:left;width:100%;padding:10px 0 0">
+							<div class="btn-group" role="group" aria-label="..." style="float:left;margin-right:20px">
+								<form class="recommend_form" action="/communities/recommend" method="post">
+									<input type="hidden" name="id" value="" />
+									<button type="submit" value="" class="btn btn-default" title="<%= t(:recommend) %>">
+										<span class="glyphicon glyphicon-heart"></span><span class="recommend_count"></span>
+									</button>
+									<button type="button" class="btn btn-default btn-share" title="<%= t(:share) %>"  data-toggle="modal" data-target="#myModal">
+										<span class="glyphicon glyphicon-share-alt"></span>
+									</button>
+								</form>
+							</div>
+							<div class="btn-group" role="group" aria-label="..." style="float:right">
+								<button class="btn btn-default dropdown-toggle comment_btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" title="<%= t(:comment) %>">
+									<%= t(:comment) %> <span class="comment_count"></span><span class="caret"></span>
+								</button>
+							</div>
+						</div>
+						<section class="comments" style="display:none">
+
+						</section>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</article>
+		</div>
+		<% else %>
+		<article>
+			<% t(:no_data) %>
+		</article>
+		<% end %>
+	</div>
 </section>

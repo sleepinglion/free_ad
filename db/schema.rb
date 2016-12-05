@@ -142,6 +142,11 @@ ActiveRecord::Schema.define(version: 20161223140414) do
     t.boolean  "sex",                            default: false
     t.string   "photo",              limit: 100
     t.boolean  "enable",                         default: false, null: false
+    t.integer  "sign_in_count",                  default: 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree

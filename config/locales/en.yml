@@ -21,3 +21,10 @@
 
 en:
   hello: "Hello world"
+  menu: 'Menu'
+  search: 'Search'
+  recommend: 'recommend'
+  share: 'share'
+  comment: 'comment'
+  page_title: 'Page Title'
+  site_address : 'Africa Lion Hive'  

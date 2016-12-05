@@ -13,7 +13,11 @@ class Admin::AdminController < ApplicationController
     else
       return 'admin/application'
     end
-  end  
+  end
+  
+ def authenticate_admin!
+   
+ end  
   
  def index  
     

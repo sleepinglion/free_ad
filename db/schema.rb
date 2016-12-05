@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 20161223140414) do
   create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "article_category_id"
-    t.string   "title",                    limit: 60,                  null: false
-    t.string   "description",                                          null: false
-    t.string   "photo",                    limit: 100
-    t.integer  "view_count",                           default: 0,     null: false
-    t.integer  "recommned_count",                      default: 0,     null: false
-    t.integer  "community_comments_count",             default: 0,     null: false
-    t.boolean  "enable",                               default: false, null: false
+    t.string   "title",                  limit: 60,                  null: false
+    t.string   "description",                                        null: false
+    t.string   "photo",                  limit: 100
+    t.integer  "view_count",                         default: 0,     null: false
+    t.integer  "recommend_count",                    default: 0,     null: false
+    t.integer  "article_comments_count",             default: 0,     null: false
+    t.boolean  "enable",                             default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["article_category_id"], name: "fk_rails_ab638c9159", using: :btree

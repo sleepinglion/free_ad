@@ -13,12 +13,14 @@ Rails.application.routes.draw do
   
   get '/login', :to =>  'users/sessions#new'  
   
+  resources :users  
   resources :articles
   
   # admin
   namespace :admin do
     get '/' => 'admin#index'
     
+    resources :users     
     resources :articles
   end      
 end

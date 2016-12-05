@@ -28,8 +28,9 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'bootstrap-sass'
-#gem 'jquery-ui-rails'
-#gem 'ui_datepicker-rails3'
+gem 'masonry-rails'
+gem 'jquery-ui-rails'
+gem 'ui_datepicker-rails3'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'devise'
@@ -39,6 +40,7 @@ gem 'cancan'
 gem 'acts-as-taggable-on'
 gem 'ckeditor', :path=>"vendor/gems/ckeditor"
 gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
+gem 'meta-tags'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

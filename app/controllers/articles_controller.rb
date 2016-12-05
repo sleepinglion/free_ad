@@ -1,18 +1,16 @@
 class ArticlesController < ApplicationController
   layout :layout
-  before_action :set_locale
   skip_load_resource :only => [:create]
-  before_action :set_article, only: [:show, :edit, :update, :destroy]  
-  
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   def index
-    @articles = Article.includes(:article_photos).order('id desc').page(params[:page]).per(10)
+    @articles = Article.order('id desc').page(params[:page]).per(10)
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @articles }
     end
   end
-  
+
   # GET /articles/1
   # GET /articles/1.json
   def show
@@ -34,6 +32,13 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+  end
+
+  def recommend
+  end
+
+  def confirm_delete
+
   end
 
   # POST /articles
@@ -77,7 +82,7 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-  
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

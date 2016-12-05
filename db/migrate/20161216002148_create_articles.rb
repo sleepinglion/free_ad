@@ -7,8 +7,8 @@ class CreateArticles < ActiveRecord::Migration
       t.string :description, :null=>false, :limit=>255
       t.string :photo, :limit=>100      
       t.integer :view_count, :null=>false, :default => 0
-      t.integer :recommned_count, :null=>false, :default=>0
-      t.integer :community_comments_count, :null=>false, :default=>0      
+      t.integer :recommend_count, :null=>false, :default=>0
+      t.integer :article_comments_count, :null=>false, :default=>0      
       t.boolean :enable, :null=>false, :default=>false
       t.timestamps
     end

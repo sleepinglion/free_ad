@@ -1,21 +1,21 @@
 class UserAbility
   include CanCan::Ability
-  def initialize(admin)
-    if admin
-      if admin.role? :administrator
+  def initialize(user)
+    if user
+      if user.role? :administrator
         can :manage, :all
-      elsif admin.role? :operator
+      elsif user.role? :operator
         can :manage, :all
         cannot :delete, [AdType,AdFileType,AdLog,AdLogType,Address,AddressSection,Bank,Target,TargetType,PointType,RequestSetting,RequestType,GameSetting,StoreGood]
         cannot :read, [Operator]
-      elsif admin.role? :sub_operator
+      elsif user.role? :sub_operator
         can :read, :all
         can :update,  [Ad,AdType,AdFileType,AdLogType,Address,AddressSection,Bank,Request,Target,TargetType,PointType,RequestSetting,RequestType,StoreGood,Sponsor,User]
         cannot :read, [Operator,ApplicationVersion,GameSetting]
-      elsif admin.role? :store_manager
+      elsif user.role? :store_manager
         can :manage, [StoreGood,StoreOrder,StoreGoodPicture]
         cannot :read, [Operator,AppVersion,GameSetting]
-      elsif admin.role? :reader
+      elsif user.role? :reader
         can :read, :all
         cannot :read, [Operator]
       end

@@ -36,7 +36,7 @@ ko:
   password : '비밀번호'
   page_title: '제목'
   site_address: '아프리카 사자굴'
-
+  insert_search_word: '검색어를 써주세요'
 
   devise:
     confirmations:

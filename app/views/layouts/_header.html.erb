@@ -2,7 +2,7 @@
 	<h1><%=link_to t(:page_title),root_path %></h1>
 	<button type="button" class="btn" id="show_menu"><span class="hspan"><%=t(:menu) %></span></button>
 	<div class="hidden-xs hidden-sm" style="position:absolute;top:0px;right:2%">
-		search
+		<%= render :partial => 'layouts/search' %>
 	</div>
 	<button type="button" class="btn hidden-md hidden-lg"  id="show_search_form"><span class="hspan"><%=t(:search) %></span></button>
 </header>

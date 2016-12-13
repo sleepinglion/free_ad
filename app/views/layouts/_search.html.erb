@@ -1,0 +1,13 @@
+<%=form_tag '/',:class=>"form-inline sl_search_form",:role=>"form",:method=>"get" do %>
+	<select name="search_type" class="form-control" style="display:none">
+		<option value="title"><%=t(:title) %></option>
+		<option value="content"><%=t(:content) %></option>
+		<option value="titlen-content" selected="selected"><%=t(:title_content) %></option>
+	</select>
+	<div class="input-group col-xs-8 col-xs-offset-3">
+		<%= search_field_tag 'serach_word','',:class=>'form-control',:placeholder=>t(:insert_search_word),:maxlength=>60,:required=>'required' %>
+		<span class="input-group-btn">
+			<%=submit_tag t(:search),:class=>"btn btn-default" %>
+		</span>
+	</div>
+<% end %>

@@ -58,8 +58,8 @@ header h1 {margin:0;padding:0;line-height:100%;font-size:100%}
 header h1 a {display:block; margin:10px auto;width:200px;font-size:25px;color:#fff}
 	
 /* 상단 버튼 */
-header #show_menu {position:absolute;top:0;left:0;width:60px;height:100%;background:url('/images/ico_menu.png') center center no-repeat}	/* 버튼 - 메뉴 */
-header #show_search_form {position:absolute;top:0;right:0;width:60px;height:100%;background:url('/images/ico_sch.png') center center no-repeat}	/* 버튼 - 검색 */
+header #show_menu {position:absolute;top:0;left:0;width:60px;height:100%;text-indent:-9999px;background:image-url('ico_menu.png') center center no-repeat}	/* 버튼 - 메뉴 */
+header #show_search_form {position:absolute;top:0;right:0;width:60px;height:100%;background:image-url('ico_sch.png') center center no-repeat}	/* 버튼 - 검색 */
 
 
 #s-search_form_layer {clear:both;float:left;width:100%;margin:0;padding:1em 0;display:none;background:#fff}

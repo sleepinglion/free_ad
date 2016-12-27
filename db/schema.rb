@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20161223140420) do
     t.index ["user_id"], name: "fk_rails_6146581a82", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", comment: "회원테이블" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",              limit: 100,                 null: false
     t.string   "nickname",           limit: 40,                  null: false
     t.string   "encrypted_password", limit: 60,                  null: false

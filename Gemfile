@@ -36,7 +36,7 @@ gem 'mini_magick'
 gem 'impressionist'
 gem 'acts-as-taggable-on'
 gem 'ckeditor'
-gem 'fancybox2-rails', :path=>"vendor/gems/fancybox2-rails"
+gem 'fancybox2-rails'
 gem 'jquery-easing-rails'
 gem 'sitemap_generator'
 gem 'meta-tags'
@@ -56,6 +56,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Capistrano
   gem 'capistrano', '~> 3.0'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'  
@@ -67,7 +68,7 @@ group :production do
   gem 'dotenv-rails'
   gem 'recaptcha', :require => 'recaptcha/rails'  
   
-  #Redis Cache
+  # Redis Cache
   gem 'redis-rails'
   gem 'redis-rack-cache'  
 end

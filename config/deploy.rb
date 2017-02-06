@@ -1,4 +1,4 @@
-set :application, 'dtc'
+set :application, 'mobileweb'
 set :repo_url, 'git@github.com:sleepinglion/free_ad.git'
 set :branch, 'master'
 # Default branch is :master

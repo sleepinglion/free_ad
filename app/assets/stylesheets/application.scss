@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 //= require 'masonry/basic'
 //= require 'masonry/centered'
 //= require 'masonry/fluid'
@@ -11,6 +10,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@font-face {
+    font-family: 'Nanum Gothic';
+    src: local('☺'),url(font-path('NanumGothic-Regular.eot?#iefix')) format('embedded-opentype'),url(font-path('NanumGothic-Regular.woff')) format('woff');
+}
+
+/* default */
 html,body {margin:0;padding:0;height: 100%;background:#eee}
 body { font-family: "Nanum Gothic","나눔고딕","Malgun Gothic","맑은 고딕","굴림",gulim,"돋움",Dotum,Arial,Helvetica, sans-serif;color:#333}
 label {vertical-align:middle;cursor:pointer}
@@ -56,7 +61,7 @@ header.no_fix {position:relative}
 /* 로고 */
 header h1 {margin:0;padding:0;line-height:100%;font-size:100%}
 header h1 a {display:block; margin:10px auto;width:200px;font-size:25px;color:#fff}
-	
+
 /* 상단 버튼 */
 header #show_menu {position:absolute;top:0;left:0;width:60px;height:100%;text-indent:-9999px;background:image-url('ico_menu.png') center center no-repeat}	/* 버튼 - 메뉴 */
 header #show_search_form {position:absolute;top:0;right:0;width:60px;height:100%;background:image-url('ico_sch.png') center center no-repeat}	/* 버튼 - 검색 */
@@ -84,10 +89,10 @@ aside li a {display:block;padding:3%}
 #sns_share li a.s_twitter {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_twt_on.gif')}
 #sns_share li a.s_google {background-image:url('http://www.gg.go.kr/wp-content/themes/ggdo/images/sub/icon_gp_on.gif')}
 #sns_share li a.s_mail {}
-	
+
 .sl_content_title {margin:20px 10px 0 10px;line-height:150%;font-weight:700;text-overflow: ellipsis}
 .sl_content_title a {text-overflow: ellipsis}
-.sl_content_content {padding:0 10px} 
+.sl_content_content {padding:0 10px}
 .create_info {float:left;margin:10px 0}
 .create_info img {float:left}
 .create_info p {font-size:smaller}
@@ -130,7 +135,7 @@ aside li a {display:block;padding:3%}
 
 h3.no_m {margin:0}
 #myModal {top:10%}
-.img-responsive {margin:0 auto} 
+.img-responsive {margin:0 auto}
 .new_photo_layer {margin-bottom:20px}
 .admin-btn div {margin-bottom:15px}
 
@@ -144,8 +149,8 @@ h3.no_m {margin:0}
 
 @media all and (max-width: 768px) {
 	a:hover{color:#333;text-decoration:none;}
-	header {height:3.8em;line-height:3.8em;padding:0.8em 0;}	
-	header h1 a { min-height:2em; background:url('/images/logo_m.png') center center no-repeat} 
+	header {height:3.8em;line-height:3.8em;padding:0.8em 0;}
+	header h1 a { min-height:2em; background:url('/images/logo_m.png') center center no-repeat}
 	footer {background:#fff;margin:1% 0;height:5em}
  	header #show_menu {background-image:url('/images/ico_menu_m.png')}
  	header #show_search_form {background-image:url('/images/ico_sch_m.png')}
@@ -153,13 +158,13 @@ h3.no_m {margin:0}
 	#main {float:left;width:100%;margin:0;padding:3.8em 0 0}
 	.sub_main {padding:0}
 	#sl_community_index .article {margin:1% 0;padding:0}
-	#sl_community_index .article:first-child {margin-top:0; padding-top:0}	
-	#sl_community_index .article article {padding:0 0 2%}	
+	#sl_community_index .article:first-child {margin-top:0; padding-top:0}
+	#sl_community_index .article article {padding:0 0 2%}
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {	
+@media all and (min-width: 768px) and (max-width: 1024px) {
 	a:hover{color:#333;text-decoration:none;}
-	header {height:4em;line-height:4em;padding:0.9em 0}	
+	header {height:4em;line-height:4em;padding:0.9em 0}
 	header h1 a { min-height:2em;background-image:url('/images/logo_m.png')}
 	footer {height:3em}
 	#mom {margin:-3em 0 -3em;min-height:100%}
@@ -167,9 +172,9 @@ h3.no_m {margin:0}
 }
 
 @media all and (min-width: 1025px) {
-	header {height:4em;line-height:3.8em;padding:0.5em 0}	
+	header {height:4em;line-height:3.8em;padding:0.5em 0}
 	header h1 a {display:block; min-height:3em}
-	footer {height:4em;border-top:1px solid #e7e7e7}	
+	footer {height:4em;border-top:1px solid #e7e7e7}
 	#mom {margin:-4em 0 -4em;min-height:100%}
 	#main {padding-top:4em;padding-bottom:4em}
 }

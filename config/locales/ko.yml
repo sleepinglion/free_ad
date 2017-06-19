@@ -23,12 +23,12 @@ ko:
   hello: "Hello world"
   application_name: '프로그램 이름'
   menu: '메뉴'
-  login: '로그인'  
+  login: '로그인'
   search: '검색'
   delete : '삭제'
   edit : '수정'
-  close: '닫기'  
-  link_more : '더보기'  
+  close: '닫기'
+  link_more : '더보기'
   recommend: '추천'
   share: '공유'
   comment: '댓글'
@@ -37,6 +37,8 @@ ko:
   page_title: '제목'
   site_address: '아프리카 사자굴'
   insert_search_word: '검색어를 써주세요'
+  site_url : 'http://www.sleepinglion.pe.kr/'
+  site_address : 'Sleeping-Lion'
 
   devise:
     confirmations:
@@ -83,12 +85,12 @@ ko:
     unlocks:
       send_instructions: 잠시 후에 어떻게 계정을 해제(사용가능하게)할 수 있는지 설명된 이메일을 받을 수 있습니다.
       send_paranoid_instructions: 계정을 가지고 계시면, 잠시 후에 어떻게 계정을 해제(사용가능하게)할 수 있는지 설명된 이메일을 받을 수 있습니다.
-      unlocked: 계정이 성공적으로 해제되었습니다. 이제, 로그인 할 수 있습니다.        
-    
+      unlocked: 계정이 성공적으로 해제되었습니다. 이제, 로그인 할 수 있습니다.
+
   views :
     pagination :
       truncate : '&nbsp;...&nbsp;'
-      previous : '이전' 
+      previous : '이전'
       last : '마지막'
       next : '다음'
       first : '처음'
@@ -102,7 +104,7 @@ ko:
     - 금
     - 토
     abbr_month_names:
-    - 
+    -
     - 1월
     - 2월
     - 3월
@@ -128,7 +130,7 @@ ko:
       long: ! '%Y년 %m월 %d일 (%a)'
       short: ! '%m/%d'
     month_names:
-    - 
+    -
     - 1월
     - 2월
     - 3월

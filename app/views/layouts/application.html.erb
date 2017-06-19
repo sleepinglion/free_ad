@@ -26,23 +26,13 @@
 <body>
 <%= render :partial => 'layouts/header' %>
 	<div id="mom">
-		<section id="main" class="container-fluid">
+		<div id="main" class="container-fluid">
 			<div class="row">
-				<% if controller.controller_name=='home' %>
-				<div class="jumbotron hero-unit">
-					<h2><%=raw t(:home_main_title) %></h2>
-					<p class="lead"><%=raw t(:home_main_description) %></p>
-					<%=link_to '깨끗한 웹을 꿈꾸고 있습니다','/home/popup',:class=>'modal_link btn btn-large btn-success',:'data-toggle'=>"modal",:'data-target'=>"#myModal" %>
-				</div>
-				<hr class="none">
-					<div id="main_main" class="sub_main">
-				<% else %>
-				<div class="sub_main">
-				<% end %>
+				<div class="sub_main col-xs-12">
 				<%=yield %>
 				</div>
 			</div>
-		</section>
+		</div>
 	</div>
 	<%= render :partial => 'layouts/footer' %>
 	<%= render :partial => 'layouts/sns' %>

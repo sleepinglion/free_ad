@@ -39,9 +39,9 @@ mark, rp, rt, ruby, summary, time {display:inline}
 
 /* layout */
 footer {clear:both;float:left;width:100%; color:#666;text-align: center}
-footer address {margin:1.8em 0 0}
-#mom {float:left;width:100%;padding:0;min-height:100%}
-.sub_main {float:left;width:100%;padding:4em 0 2em}
+footer address {margin:0.5em 0 0}
+#mom {float:left;width:100%;padding:0}
+.sub_main {float:left;width:100%;padding-top:4em;padding-bottom:2em}
 .alert-success {clear:both}
 #sl_tag_cloud {position:relative;margin-bottom:30px;}
 #tags {float:left;width:100%}
@@ -56,7 +56,7 @@ footer address {margin:1.8em 0 0}
 .number {font-family:Arial;letter-spacing:0}
 
  /* header */
-header {position:fixed;float:left;width:100%;padding:0;margin:0;background:#6999d1;z-index:9997}
+header {position:relative;float:left;width:100%;padding:0;margin:0;background:#6999d1;z-index:9997}
 header.no_fix {position:relative}
 /* 로고 */
 header h1 {margin:0;padding:0;line-height:100%;font-size:100%}
@@ -67,7 +67,7 @@ header #show_menu {position:absolute;top:0;left:0;width:60px;height:100%;text-in
 header #show_search_form {position:absolute;top:0;right:0;width:60px;height:100%;background:image-url('ico_sch.png') center center no-repeat}	/* 버튼 - 검색 */
 
 
-#s-search_form_layer {clear:both;float:left;width:100%;margin:0;padding:1em 0;display:none;background:#fff}
+#s-search_form_layer {clear:both;margin-top:0;margin-bottom:0;padding-top:1em;padding-bottom:1em;display:none;background:#fff}
 header .input-group-btn {line-height:1.1}
 
 /* aside */
@@ -133,6 +133,10 @@ aside li a {display:block;padding:3%}
 .comment_comments .comments {}
 .comment_comment_form {display:none}
 
+
+#sl_login {width:728px;margin:0 auto}
+#show_search_form {text-indent:-9999px;text-align:left}
+
 h3.no_m {margin:0}
 #myModal {top:10%}
 .img-responsive {margin:0 auto}
@@ -150,31 +154,54 @@ h3.no_m {margin:0}
 @media all and (max-width: 768px) {
 	a:hover{color:#333;text-decoration:none;}
 	header {height:3.8em;line-height:3.8em;padding:0.8em 0;}
-	header h1 a { min-height:2em; background:url('/images/logo_m.png') center center no-repeat}
-	footer {background:#fff;margin:1% 0;height:5em}
- 	header #show_menu {background-image:url('/images/ico_menu_m.png')}
- 	header #show_search_form {background-image:url('/images/ico_sch_m.png')}
+	footer {background:#fff;margin:1% 0}
+ 	header #show_menu {background-image:image-url('ico_menu_m.png')}
+ 	header #show_search_form {background-image:image-url('ico_sch_m.png')}
 	#mom {float:left;width:100%;margin:0}
-	#main {float:left;width:100%;margin:0;padding:3.8em 0 0}
-	.sub_main {padding:0}
-	#sl_community_index .article {margin:1% 0;padding:0}
+	#main {float:left;width:100%;margin:0;padding:0}
+	.sub_main {padding-top:0;padding-bottom:0}
+	#sl_community_index .article {margin-top:1%;padding:0}
 	#sl_community_index .article:first-child {margin-top:0; padding-top:0}
 	#sl_community_index .article article {padding:0 0 2%}
 }
 
-@media all and (min-width: 768px) and (max-width: 1024px) {
-	a:hover{color:#333;text-decoration:none;}
-	header {height:4em;line-height:4em;padding:0.9em 0}
-	header h1 a { min-height:2em;background-image:url('/images/logo_m.png')}
-	footer {height:3em}
-	#mom {margin:-3em 0 -3em;min-height:100%}
-	#main {padding-top:3em;padding-bottom:3em}
+@media all and (min-width: 768px) {
+  #mom{min-height:100%;clear:both;float:left;width:100%;padding:0}
+  #directory_info {margin:1em 0 0;padding:0 15px}
+  #create_menu {margin:15px 0;padding:0 15px}
 }
 
-@media all and (min-width: 1025px) {
+@media all and (min-width: 768px) and (max-width: 991px) {
+	a:hover{color:#333;text-decoration:none;}
+	header {height:4em;line-height:4em;padding:0.9em 0}
+	header h1 a { min-height:2em;background-image:image-url('logo_m.png')}
+	footer {height:2em}
+	#mom {margin:-3em 0 -2em;min-height:100%}
+	#main {padding-top:3em;padding-bottom:2em}
+}
+
+@media all and (min-width: 992px) {
+  html,body {font-size:14px}
 	header {height:4em;line-height:3.8em;padding:0.5em 0}
 	header h1 a {display:block; min-height:3em}
-	footer {height:4em;border-top:1px solid #e7e7e7}
-	#mom {margin:-4em 0 -4em;min-height:100%}
-	#main {padding-top:4em;padding-bottom:4em}
+	footer {height:2.5em;border-top:1px solid #e7e7e7}
+	#mom {margin:-4em 0 -2.5em;min-height:100%}
+	#main {padding-top:4em;padding-bottom:2.5em}
+}
+
+@media all and (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media all and (min-width: 1200px) {
+	.adsbygoogle {height: 100px}
+  footer form {margin:5px 0 0}
+}
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+  .adsbygoogle {height: 110px}
+}
+
+@media (min-width: 1500px) {
+  html,body {font-size:18px}
 }

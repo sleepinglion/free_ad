@@ -2,11 +2,11 @@
 <html lang="<%=I18n.locale %>">
 <head>
 <meta charset="utf-8" />
-<title><%=t(:service_name)%> <%=t(:login_page) %></title>
-<meta name="description" content="<%=t(:service_name)%> Admin System Login" />
+<title><%=t(:application_name)%> <%=t(:login_page) %></title>
+<meta name="description" content="<%=t(:application_name)%> Admin System Login" />
 <meta name="author" content="Sleeping-Lion" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+<%= stylesheet_link_tag 'admin/application', :media => 'all', 'data-turbolinks-track' => true %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= csrf_meta_tags %>
 <style type="text/css">
@@ -20,11 +20,11 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="login-box">
-				<h2><%=t(:service_name) %> <%=t(:login_title) %></h2>
+				<h2><%=t(:application_name) %> <%=t(:login_title) %></h2>
 				<%= yield %>
 			</div>
 		</div>
 	</div>
-	<%= javascript_include_tag asset_path 'users/login.js', "data-turbolinks-track" => true  %>
+	<%= javascript_include_tag asset_path 'users/login.js', 'data-turbolinks-track' => true  %>
 </body>
 </html>

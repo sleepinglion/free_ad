@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(:id=>1,:email => 'toughjjh@gmail.com',:nickname=>'잠자는-사자',:password => '123456', :password_confirmation => '123456',:photo=>File.open(Rails.root.join("app", "assets", "images", "dog.png")))
+User.create(:id=>1,:email => 'toughjjh@gmail.com',:nickname=>'잠자는-사자',:password => '123456',:admin=>1,:password_confirmation => '123456',:photo=>File.open(Rails.root.join("app", "assets", "images", "dog.png")))
 
 Role.create(:id=>1,:title=>'administrator')
 Role.create(:id=>2,:title=>'user')

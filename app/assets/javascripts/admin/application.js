@@ -15,7 +15,6 @@
 //= require bootstrap/modal
 //= require bootstrap/dropdown
 //= require bootstrap/alert
-//= require plugin/jquery.pagination
 //= require ckeditor/init
 
 CKEDITOR.replace("sl_content", {
